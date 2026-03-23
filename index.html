@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación Cumpleaños Giss - V4</title>
+  <title>Invitación Cumpleaños Giss - V5</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -92,10 +92,11 @@
       padding: 8px 16px; border-radius: 999px; font-weight: 700; margin-bottom: 14px;
     }
     .cake-wrap {
-      position: relative; margin: 18px auto 12px; width: 240px; height: 150px; cursor: pointer;
+      position: relative; margin: 35px auto 12px; width: 240px; height: 150px; cursor: pointer;
       user-select: none; transition: transform .25s ease;
     }
     .cake-wrap:hover { transform: scale(1.03); }
+    .cake-wrap:active { transform: scale(.98); }
     .cake-base {
       width: 240px; height: 90px; background: linear-gradient(180deg, #ffd0e5, #ffc1da);
       border-radius: 18px 18px 28px 28px; position: absolute; bottom: 0; left: 0;
@@ -162,8 +163,8 @@
   <section id="screen1" class="screen">
     <div class="card">
       <div class="tag">🎀 Invitación especial 🎀</div>
-      <h1>¡Estás cordialmente invitado/a a celebrar conmigo mi fiesta número 34! 🎂✨</h1>
-      <p>Prepárate para una tarde dulce, divertida y llena de pastelitos porque quiero compartir contigo este día tan especial 💖</p>
+      <h1>¡Estás cordialmente invitado a celebrar conmigo mi fiesta #34!</h1>
+      <p>Prepárate para una tarde dulce, divertida y llena de pastel porque quiero compartir contigo este día tan especial 💖</p>
       <button class="btn btn-primary" onclick="openInvite()">Abrir invitación ✨</button>
       <button class="btn btn-tertiary" onclick="toggleMusic()">🎵 Música ON/OFF</button>
       <p class="music-note">Tócame para ambientar la invitación con una melodía suave ✨</p>
@@ -174,8 +175,8 @@
   <section id="screen2" class="screen hidden">
     <div class="card">
       <h1>¡Cumpleaños de Giss!</h1>
-      <h2>Celebrando mis 34 añitos 🎂</h2>
-      <p>Toca el pastel para descubrir todos los detalles de la invitación ✨</p>
+      <h2>Celebrando mis 34 años 🎂</h2>
+      <p>Toca el pastel para apagar las velas y descubrir la invitación ✨</p>
 
       <div class="cake-wrap" onclick="revealInvite()">
         <div class="candles">
@@ -190,7 +191,7 @@
       <div class="age">34</div>
 
       <div id="inviteBox" class="invite-box hidden">
-        💕 Con mucha alegría quiero invitarte a celebrar conmigo una tarde llena de dulzura, risas y lindos momentos en mi fiesta número 34 ✨
+        💕 Con mucha alegría quiero invitarte a celebrar conmigo una tarde llena de dulzura, risas y lindos momentos en mi fiesta #34 ✨
       </div>
 
       <div id="details" class="details hidden">
@@ -208,11 +209,10 @@
 
       <div id="actionButtons" class="actions hidden">
         <button class="btn btn-tertiary" onclick="openMaps()">Ver ubicación 📍</button>
-        <button class="btn btn-primary" onclick="confirmWhatsApp()">Confirmar por WhatsApp 📲</button>
       </div>
 
       <button id="giftBtn" class="btn btn-secondary hidden" onclick="showFinalMessage()">Ver mensajito 💌</button>
-      <div class="footer-note">✨ Toca los botones para ver ubicación o confirmar asistencia</div>
+      <div class="footer-note">✨ Toca el botón para ver la ubicación</div>
     </div>
   </section>
 
@@ -220,8 +220,7 @@
     <div class="card">
       <h1>💖 Te espero</h1>
       <p>
-        Será un gusto compartir este día tan especial contigo 🌸<br><br>
-        Ven a disfrutar una tarde llena de alegría, pastel, sonrisas y mucho cariño. ¡Tu presencia hará esta celebración aún más bonita! 🎂✨
+        Será un gusto compartir este día tan especial contigo 🌸Ven a disfrutar una tarde llena de alegría, pastel, sonrisas y mucho cariño.
       </p>
       <button class="btn btn-primary" onclick="restartInvite()">Ver de nuevo 💫</button>
     </div>
@@ -326,11 +325,6 @@
 
     function openMaps() {
       window.open('https://maps.app.goo.gl/hPjkCbwpbsXoPgSb7', '_blank');
-    }
-
-    function confirmWhatsApp() {
-      const text = encodeURIComponent('¡Hola! 💖 Confirmo mi asistencia a la fiesta de cumpleaños #34 de Giss 🎂✨ Nos vemos el domingo 29 de marzo a las 5:00 PM.');
-      window.open(`https://wa.me/?text=${text}`, '_blank');
     }
 
     function launchConfetti(amount = 80) {
